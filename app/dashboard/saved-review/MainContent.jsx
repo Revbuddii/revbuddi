@@ -7,11 +7,11 @@ import {
   BadgeCheck,
   Star,
 } from "lucide-react";
-import { formatDate, reviews } from "../constant/data";
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { formatDate,reviews } from "../../../constant/data";
 
 const ReviewCard = ({ review }) => {
   return (
@@ -100,7 +100,7 @@ const ReviewCard = ({ review }) => {
   );
 };
 
-export default function Main() {
+export default function MainContent() {
   return (
     <main className="container mx-auto ">
       <div className="space-y-6">

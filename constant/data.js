@@ -1,4 +1,91 @@
+import {
+  User,
+  Settings,
+  Home,
+  Trophy,
+  ClipboardList,
+  ShieldCheck,
+  GraduationCap,
+  Bookmark,
+  FileText,
+  BookOpen,
+  LifeBuoy,
+  Menu,
+  X,
+} from "lucide-react";
 import { Icon } from "../constant/icons";
+export const pageTitles = {
+  "/dashboard": "Dashboard",
+  "/dashboard/saved-review": "Saved Reviews",
+  "/dashboard/my-reviews": "My Reviews",
+  "/dashboard/chart": "Revbuddi Charts",
+  "/dashboard/leadersboard": "LeadersBoard",
+  "/dashboard/management": "Review Management",
+  "/dashboard/safety": "Trust & Safety Hub",
+  "/dashboard/education": "Educational Shortcuts",
+  "/dashboard/settings": "Settings",
+  "/dashboard/settings/dashboard/profile": "Profile",
+  "/dashboard/settings/dashboard/guidelines": "Guidelines",
+  "/dashboard/settings/support": "Support",
+};
+export const categoryData = [
+  {
+    category: "Technology",
+    items: [
+      { title: "Smartphones", image: Icon.andriod },
+      { title: "Laptops", image: Icon.andriod },
+      { title: "Cameras", image: Icon.andriod },
+      { title: "Drones", image: Icon.andriod },
+    ],
+  },
+  {
+    category: "Food and Dining",
+    items: [
+      { title: "Restaurants", image: Icon.andriod },
+      { title: "Food Deliveries", image: Icon.andriod },
+      { title: "Cafés", image: Icon.andriodNew },
+      { title: "Drones", image: Icon.andriod },
+    ],
+  },
+];
+export const sidebarNavItems = [
+  { icon: Home, label: "Home", href: "/dashboard" },
+  { icon: Bookmark, label: "Saved Review", href: "/dashboard/saved-review" },
+  { icon: FileText, label: "My Reviews", href: "/dashboard/my-reviews" },
+  { icon: Trophy, label: "LeadersBoard", href: "/dashboard/leadersboard" },
+  {
+    icon: ClipboardList,
+    label: "Review Management",
+    href: "/dashboard/management",
+  },
+  { icon: ShieldCheck, label: "Trust & Safety Hub", href: "/dashboard/safety" },
+  {
+    icon: GraduationCap,
+    label: "Educational Shortcuts",
+    href: "/dashboard/education",
+  },
+  { icon: Settings, label: "Settings", href: "/dashboard/settings" },
+  {
+    icon: User,
+    label: "Profile",
+    href: "/dashboard/settings/dashboard/profile",
+  },
+  {
+    icon: BookOpen,
+    label: "Guidelines",
+    href: "/dashboard/settings/dashboard/guidelines",
+  },
+  { icon: LifeBuoy, label: "Support", href: "/dashboard/settings/support" },
+];
+
+export const HomeIcons = [
+  { url: "/", logo: Icon.home, label: "Home" },
+  { url: "/dashboard/chart", logo: Icon.chart, label: "Chart" },
+  { url: "/notification", logo: Icon.bells, label: "Notifications" },
+  { url: "/briefcase", logo: Icon.briefcase, label: "Briefcase" },
+  { url: "/category", logo: Icon.category, label: "Category" },
+];
+
 export const reviews = [
     {
       id: "rev_1",

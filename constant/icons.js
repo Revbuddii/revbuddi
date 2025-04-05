@@ -9,6 +9,10 @@ import briefcase from "../assets/icons/briefcase.svg";
 import home from "../assets/icons/home.svg";
 import delivery from "../assets/icons/delivery.svg";
 import woman from "../assets/icons/woman.svg";
+import first from "../assets/icons/first.svg";
+import second from "../assets/icons/second.svg";
+import third from "../assets/icons/third.svg";
+import amazon from "../assets/icons/amazon.svg";
 
 export const Icon = {
   andriod,
@@ -22,4 +26,8 @@ export const Icon = {
   bells,
   briefcase,
   home,
+  first,
+  second,
+  third,
+  amazon
 };

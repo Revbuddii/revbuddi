@@ -1,42 +1,18 @@
 "use client";
-import { Icon } from "../constant/icons";
+import { Icon } from "../../constant/icons";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Pen, Search, Menu, X } from "lucide-react";
+import { Pen, Search } from "lucide-react";
+import { HomeIcons } from '../../constant/data';
 
-
-const Header = () => {
+const DashBoardHeader = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const HomeIcons = [
-    { url: "/", logo: Icon.home, label: "Home" },
-    { url: "/chart", logo: Icon.chart, label: "Chart" },
-    { url: "/notification", logo: Icon.bells, label: "Notifications" },
-    { url: "/briefcase", logo: Icon.briefcase, label: "Briefcase" },
-    { url: "/category", logo: Icon.category, label: "Category" },
-  ];
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
+    <header className="hidden md:block sticky top-0 z-50 bg-white border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <Image
-                src={Icon?.logo}
-                alt="Logo"
-                width={40}
-                height={40}
-                className="w-8 h-8 md:w-10 md:h-10 object-contain"
-              />
-            </Link>
-          </div>
 
           <div className="hidden md:flex bg-transparent flex-1 max-w-md mx-8">
             <div className="relative w-full">
@@ -91,12 +67,6 @@ const Header = () => {
             </div>
           </div>
 
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
 
         </div>
 
@@ -117,37 +87,9 @@ const Header = () => {
             />
           </div>
         </div>
-
-
-        {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {HomeIcons.map(({ url, logo, label }, idx) => (
-                <Link
-                  key={idx}
-                  href={url}
-                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <Image
-                    src={logo}
-                    alt={label}
-                    width={24}
-                    height={24}
-                    className="w-5 h-5 mr-3"
-                  />
-                  <span>{label}</span>
-                </Link>
-              ))}
-              <button className="w-full bg-baseColor flex items-center justify-center gap-2 px-6 py-2 rounded-2xl text-secondary text-xs mt-4">
-                <Pen size={12} /> Post Review
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );
 };
 
-export default Header;
+export default DashBoardHeader;
