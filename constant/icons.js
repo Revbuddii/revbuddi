@@ -13,6 +13,11 @@ import first from "../assets/icons/first.svg";
 import second from "../assets/icons/second.svg";
 import third from "../assets/icons/third.svg";
 import amazon from "../assets/icons/amazon.svg";
+import hero from "../assets/icons/chart-widget.svg";
+import commentWidget from "../assets/icons/comment-widget.svg";
+import ratingWidget from "../assets/icons/rating-widget.svg";
+import colorWidget from "../assets/icons/color-widget.svg";
+import neon from "../assets/icons/neon.svg";
 
 export const Icon = {
   andriod,
@@ -29,5 +34,9 @@ export const Icon = {
   first,
   second,
   third,
-  amazon
+  amazon,
+  hero,
+  commentWidget,
+  ratingWidget,
+  colorWidget,neon
 };
