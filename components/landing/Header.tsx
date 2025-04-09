@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Icon } from "@/constant/icons";
 import Link from "next/link";
+import { Button } from "../ui/button";
 import { useState } from "react";
 import Cta from "@/constant/Cta";
 
@@ -22,7 +23,7 @@ export default function Header() {
   };
 
   return (
-    <header className="flex fixed z-50 flex-col md:flex-row items-center max-w-2xl rounded-2xl my-4 border mx-auto justify-between gap-4 md:gap-10 shadow-xl bg-[#E9F5FF] px-4 md:px-6 py-2 w-full">
+    <header className="flex sticky top-4 z-50 flex-col md:flex-row items-center max-w-2xl rounded-2xl my-4 border mx-auto justify-between gap-4 md:gap-10 shadow-xl bg-[#E9F5FF] px-4 md:px-6 py-2 w-full">
       <div className="flex w-full md:w-auto justify-between items-center">
         <div className="w-10 h-10">
           <Image
