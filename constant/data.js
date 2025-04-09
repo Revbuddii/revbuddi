@@ -202,31 +202,32 @@ export const featuresData = [
 ];
 
 
-
+export const imageSources = {
+  search: Icon.neon,
+  analytics:Icon.neon,
+  tracking: Icon.neon
+};
 
 export const steps = [
   {
     number: "01",
     title: "Search for a product or entity",
-    description:
-      "Effortlessly locate businesses, products, or services with our powerful search feature tailored to deliver accurate and relevant results.",
-    image: Icon.neon,
+    description: "Effortlessly locate businesses, products, or services with our powerful search feature tailored to deliver accurate and relevant results.",
+    image: imageSources.search,
     imagePosition: "left"
   },
   {
     number: "02",
     title: "Leave a detailed review",
-    description:
-      "Provide your insights by submitting detailed reviews, complete with ratings, comments, and optional proof to ensure authenticity.",
-      image: Icon.neon,
-      imagePosition: "right"
+    description: "Provide your insights by submitting detailed reviews, complete with ratings, comments, and optional proof to ensure authenticity",
+    image: imageSources.analytics,
+    imagePosition: "right"
   },
   {
     number: "03",
     title: "Track your submissions",
-    description:
-      "Track your reviews and reports to stay involved, helping to build a reliable platform that fosters transparency and trust.",
-      image: Icon.neon,
-      imagePosition: "left"
-  },
+    description: "Track your reviews and reports to stay involved, helping to build a reliable platform that fosters transparency and trust.",
+    image: imageSources.tracking,
+    imagePosition: "left"
+  }
 ];

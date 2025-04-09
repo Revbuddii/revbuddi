@@ -1,7 +1,7 @@
 import Cta from "@/constant/Cta";
 import Link from "next/link";
 import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin, Github, YoutubeIcon, XIcon } from "lucide-react";
+import { Facebook, Twitter, Instagram, YoutubeIcon, XIcon } from "lucide-react";
 
 const footerItems = [
   { title: "Home", path: "/" },
@@ -21,9 +21,9 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer>
-      <section className="bg-[#313235] py-16 md:py-24">
-        <div className="wrapper max-w-7xl mx-auto px-4 md:px-6">
+    <footer className="bg-[#313235]">
+      <section className="wrapper max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
+        <div className="">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="text-white max-w-2xl md:max-w-4xl">
               <span className="text-sm md:text-base uppercase font-medium tracking-wider text-[#FAFDFF]/80">
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <section className="bg-[#202123] flex flex-col items-center justify-center leading-[5] py-8 text-sm text-white wrapper">
+      <section className="bg-[#202123] flex flex-col items-center justify-center leading-[5] py-8 text-sm text-white ">
         <ul className="flex items-center justify-center gap-4 text-sm text-white">
           {footerItems.map(({ title, path }, idx) => (
             <li key={idx}>

@@ -23,7 +23,7 @@ export default function Landing() {
             make informed decisions.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
+          <div className="flex  md:flex-row items-center gap-4 mt-10">
             <Cta
               children="Get Started"
               className="bg-baseColor hover:bg-opacity-90 text-white font-medium text-sm p-6  rounded-xl w-full sm:w-auto  shadow-lg transition-all duration-300"
@@ -79,7 +79,6 @@ export default function Landing() {
         </div>
       </section>
 
-
       <section className="wrapper my-10">
         <div>
           <h3 className="text-baseColor text-xs font-bold">Features</h3>
@@ -114,95 +113,125 @@ export default function Landing() {
           ))}
         </div>
       </section>
+    </div>
+  );
+}
 
-{/* steps */}
-   <section className="py-12 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center text-gray-800">Getting Started is Easy</h2>
-        <p className="text-xl text-center text-gray-600 mt-2 mb-12">How It Works</p>
-        
-        <div className="space-y-12">
-          {steps.map((step, index) => (
-            <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-              {index % 2 === 0 && (
-                <div className="md:col-span-5 md:col-start-1">
-                  <div className="relative rounded-2xl overflow-hidden border border-blue-100 shadow-lg bg-white">
-                    <div className="aspect-[4/3] relative">
-                      <Image 
-                        src={step.image}
-                        fill
-                        alt={step.title}
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <button className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-full shadow-md flex items-center justify-center">
-                          <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center">
-                            <svg className="w-6 h-6 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
+export function GettingStarted() {
+  return (
+    <div className="wrapper px-4 py-10">
+      <h1 className="text-4xl lg:text-5xl text-center font-bold text-gray-800 mb-2">
+        Getting Started is Easy
+      </h1>
+      <h2 className="text-xl text-center text-[#343A40] font-normal mb-16">
+        How It Works
+      </h2>
+
+      <div className="relative">
+        {steps.map((step, index) => {
+          const isLast = index === steps.length - 1;
+
+          if (step.imagePosition === "left") {
+            return (
+              <div
+                key={step.number}
+                className={`flex flex-col md:flex-row gap-8 items-center ${
+                  !isLast ? "mb-16" : ""
+                }`}
+              >
+                <div className="flex-1">
+                  <div className="relative rounded-xl overflow-hidden shadow-lg border border-blue-100">
+                    <Image
+                      src={step.image}
+                      alt={`${step.title} visualization`}
+                      width={450}
+                      height={200}
+                      className="w-full h-auto"
+                    />
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-md cursor-pointer">
+                      <div className="text-blue-500">▶</div>
                     </div>
                   </div>
                 </div>
-              )}
-              
-              <div className="md:col-span-2 md:col-start-6 flex flex-col items-center justify-center">
-                <div className="w-20 h-20 rounded-full bg-white border-4 border-blue-200 text-3xl font-semibold text-gray-800 flex items-center justify-center">
-                  {step.number}
+
+                <div className="flex-1 flex">
+                  <div className="relative flex flex-col items-center mr-6">
+                    <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center text-2xl font-bold z-10">
+                      {step.number}
+                    </div>
+                    {!isLast && (
+                      <div className="absolute top-16 w-0.5 h-full bg-blue-200 border-dashed border border-[#78ADFF]"></div>
+                    )}
+                  </div>
+
+                  <div>
+                    <h3 className="text-3xl font-bold text-gray-800 mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-                {index < steps.length - 1 && (
-                  <div className="h-16 border-l-4 border-blue-200 border-dashed mt-2"></div>
-                )}
               </div>
-              
-              {index % 2 === 0 && (
-                <div className="md:col-span-5 md:col-start-8">
-                  <div className="text-center md:text-left">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{step.title}</h3>
-                    <p className="text-base text-gray-600">{step.description}</p>
+            );
+          } else {
+            return (
+              <div
+                key={step.number}
+                className={`flex flex-col md:flex-row ${
+                  !isLast ? "mb-16" : ""
+                }`}
+              >
+                <div className="flex-1 flex justify-start pr-8">
+                  <div className="max-w-md">
+                    <h3 className="text-3xl font-bold text-gray-800 mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
-              )}
-              
-              {index % 2 === 1 && (
-                <div className="md:col-span-5 md:col-start-1">
-                  <div className="text-center md:text-left">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{step.title}</h3>
-                    <p className="text-base text-gray-600">{step.description}</p>
+
+                <div className="flex items-center">
+                  <div className="relative flex flex-col items-center mr-6">
+                    <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center text-2xl font-bold z-10">
+                      {step.number}
+                    </div>
+                    {!isLast && (
+                      <div className="absolute top-16 w-0.5 h-full bg-blue-200 border-dashed border border-[#78ADFF]"></div>
+                    )}
                   </div>
-                </div>
-              )}
-              
-              {index % 2 === 1 && (
-                <div className="md:col-span-5 md:col-start-8">
-                  <div className="relative rounded-2xl overflow-hidden border border-blue-100 shadow-lg bg-white">
-                    <div className="aspect-[4/3] relative">
-                      <Image 
+
+                  <div className="flex-1">
+                    <div className="relative rounded-xl overflow-hidden shadow-lg border border-blue-100 ml-6">
+                      <Image
                         src={step.image}
-                        fill
-                        alt={step.title}
-                        className="object-cover"
+                        alt={`${step.title} visualization`}
+                        width={450}
+                        height={200}
+                        className="w-full h-auto"
                       />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <button className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-full shadow-md flex items-center justify-center">
-                          <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center">
-                            <svg className="w-6 h-6 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                        </button>
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-md cursor-pointer">
+                        <div className="text-blue-500">▶</div>
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
+              </div>
+            );
+          }
+        })}
       </div>
-    </section>
+
+      <div className="flex flex-col  items-end text-right justify-end rtl:text-right mt-20">
+        <h1 className=" max-w-lg text-5xl text-[#343A40] ">Trusted by Thousands of Users Worldwide</h1>
+        <p className="max-w-md text-sm text-[#000000] mt-2">
+          Join a growing community committed to transparency and trust in reviews.
+        </p>
+        <Cta className="bg-baseColor rounded-2xl text-sm text-white mt-4" children="Join Now" />
+      </div>
     </div>
   );
 }

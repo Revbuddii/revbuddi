@@ -88,7 +88,7 @@ body {
   scroll-behavior: smooth;
 }
 .wrapper {
-  @apply px-3  lg:px-14;
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 .hide-scroll-area{
@@ -109,5 +109,16 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-image: none !important;
+  color: transparent !important;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto;
 }
 
