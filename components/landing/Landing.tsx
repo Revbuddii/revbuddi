@@ -3,6 +3,8 @@ import { Icon } from "@/constant/icons";
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader } from "../ui/card";
 import { featuresData, steps } from "@/constant/data";
+import { Button } from "../ui/button";
+import { images } from "@/constant/images";
 
 export default function Landing() {
   return (
@@ -226,11 +228,121 @@ export function GettingStarted() {
       </div>
 
       <div className="flex flex-col  items-end text-right justify-end rtl:text-right mt-20">
-        <h1 className=" max-w-lg text-5xl text-[#343A40] ">Trusted by Thousands of Users Worldwide</h1>
+        <h1 className=" max-w-lg text-5xl text-[#343A40] ">
+          Trusted by Thousands of Users Worldwide
+        </h1>
         <p className="max-w-md text-sm text-[#000000] mt-2">
-          Join a growing community committed to transparency and trust in reviews.
+          Join a growing community committed to transparency and trust in
+          reviews.
         </p>
-        <Cta className="bg-baseColor rounded-2xl text-sm text-white mt-4" children="Join Now" />
+        <Cta
+          className="bg-baseColor rounded-2xl text-sm text-white mt-4"
+          children="Join Now"
+        />
+      </div>
+    </div>
+  );
+}
+
+export function Blacklist() {
+  const steps = [
+    {
+      id: 1,
+      number: "1",
+      title: "Submit a Report",
+      description:
+        "Easily report suspicious entities by providing verified details. Help protect others from fraud.",
+    },
+    {
+      id: 2,
+      number: "2",
+      title: "Verification Process",
+      description:
+        "Our team carefully reviews reports to ensure fairness before blacklisting offenders.",
+    },
+    {
+      id: 3,
+      number: "3",
+      title: "Browse & Stay Safe",
+      description:
+        "Access the blacklist, check warnings, and make informed choices before engaging.",
+    },
+  ];
+
+  return (
+    <div className=" bg-[#202123] text-white py-16 ">
+      <main className="wrapper">
+        <div className="text-start mb-16">
+          <h2 className="text-xl md:text-xl font-semibold text-gray-400">
+            Blacklist
+          </h2>
+          <h1 className="mt-2 text-2xl sm:text-3xl max-w-4xl text-[#FAFDFF] md:text-3xl lg:text-5xl font-bold tracking-tight ">
+            Report Fraudulent Activities to Help Create a Safer Community
+          </h1>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps.map((step) => (
+            <Card
+              key={step.id}
+              className="bg-[#252628] border-0 p-8 rounded-lg"
+            >
+              <CardHeader className="text-6xl p-0   font-bold text-gray-500">
+                {step.number}
+              </CardHeader>
+              <CardContent className="p-0 text-[#FAFDFF]">
+                <h3 className="text-2xl md:text-xl lg:text-2xl py-4 font-semibold">
+                  {step.title}
+                </h3>
+                <p className="text-sm">{step.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </main>
+    </div>
+  );
+}
+
+export function TrustedContributors() {
+  return (
+    <div className=" wrapper w-full">
+      <div className=" px-4 py-8">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            Recognizing Trusted Contributors
+          </h1>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl">
+            Revbuddi thrives on real user contributions, building a trusted
+            space for reviews and fraud prevention. Earn badges, stay updated on
+            fraud alerts, and make an impact.
+          </p>
+        </div>
+
+        <div className="mb-8">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-6 px-8 text-sm rounded-full ">
+            Join Now
+          </Button>
+        </div>
+
+        <div className="hidden md:block">
+            <div className="flex relative flex-col items-center justify-end h-full">
+              <Image
+                src={images.Leaderboard}
+                width={200}
+                height={200}
+                className="md:w-1/2 w-full object-cover z-20"
+                alt="leaderboard"
+              />
+              <Image
+                src={images.Table}
+                width={200}
+                height={200}
+                className="md:w-1/2 z-10 w-full md:-bottom-4 absolute right-0"
+                alt="data table"
+              />
+            </div>
+          </div>
       </div>
     </div>
   );
