@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -8,19 +8,15 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
-import { pageTitles, sidebarNavItems,HomeIcons } from "../../constant/data";
+import { pageTitles, sidebarNavItems, HomeIcons } from "../../constant/data";
 import { Icon } from "../../constant/icons";
 import DashBoardHeader from "./Header";
-
-
-
-
-
 
 export default function AdminDashboard({ children }) {
   const pathname = usePathname();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const mainContentRef = useRef(null);
 
   const currentPageTitle = pageTitles[pathname] || "Dashboard";
 
@@ -40,6 +36,40 @@ export default function AdminDashboard({ children }) {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    if (mainContentRef.current) {
+      mainContentRef.current.scrollTop = 0;
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleTouchStart = () => {
+
+      if (mainContentRef.current) {
+        const scrollTop = mainContentRef.current.scrollTop;
+        const scrollHeight = mainContentRef.current.scrollHeight;
+        const clientHeight = mainContentRef.current.clientHeight;
+        
+        if (scrollTop === 0) {
+          mainContentRef.current.scrollTop = 1;
+        } else if (scrollTop + clientHeight >= scrollHeight) {
+          mainContentRef.current.scrollTop = scrollHeight - clientHeight - 1;
+        }
+      }
+    };
+
+    const mainContent = mainContentRef.current;
+    if (mainContent && isMobile) {
+      mainContent.addEventListener('touchstart', handleTouchStart);
+    }
+
+    return () => {
+      if (mainContent) {
+        mainContent.removeEventListener('touchstart', handleTouchStart);
+      }
+    };
+  }, [isMobile]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -96,13 +126,14 @@ export default function AdminDashboard({ children }) {
               <Link
                 href={item.href}
                 key={item.label}
-                className={`flex items-center text-sm font-medium mb-2 ${
+                className={`flex items-center text-sm from-neutral-500 mb-2 ${
                   isSidebarOpen ? "px-4 py-2" : "justify-center py-3"
                 } mx-2 rounded-lg transition-colors ${
                   isActive ? "bg-baseColor text-white" : "hover:bg-accent"
                 }`}
                 onClick={() => isMobile && toggleSidebar()}
               >
+
                 <item.icon
                   className={`${isSidebarOpen ? "mr-3" : ""} h-4 w-4`}
                 />
@@ -130,7 +161,7 @@ export default function AdminDashboard({ children }) {
           isSidebarOpen ? "md:ml-64" : "md:ml-16"
         }`}
       >
-        <header className="bg-white shadow sticky top-0 z-10">
+        <header className="bg-white shadow z-10 sticky top-0">
           <div className="flex items-center justify-between px-4 py-3 md:px-6">
             <div className="flex items-center">
               <button
@@ -145,8 +176,15 @@ export default function AdminDashboard({ children }) {
           </div>
         </header>
 
-        <main className=" w-full p-4 overflow-y-auto pb-20 md:pb-4">
-          <div className="mb-7">
+        <main 
+          ref={mainContentRef}
+          className="w-full p-4 overflow-y-auto flex-1"
+          style={{
+            WebkitOverflowScrolling: 'touch', 
+            overscrollBehavior: 'contain' 
+          }}
+        >
+          <div className="mb-2">
             <h1 className="text-3xl text-black font-semibold">
               {currentPageTitle}
             </h1>
@@ -154,7 +192,7 @@ export default function AdminDashboard({ children }) {
           {children}
         </main>
 
-        {isMobile && (
+        {/* {isMobile && (
           <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-lg z-20">
             <div className="flex justify-around items-center h-16">
               {HomeIcons.map((item) => {
@@ -182,7 +220,7 @@ export default function AdminDashboard({ children }) {
               })}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

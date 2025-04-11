@@ -46,6 +46,7 @@ export default {
 				white: 'var(--white)',
                 border: 'var(--border)',
                 input: 'var(--input)',
+                borderRadius: 'var(--borderRadius)',
                 ring: 'var(--ring)',
                 chart: {
                     '1': 'var(--chart-1)',

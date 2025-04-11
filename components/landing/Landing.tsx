@@ -28,11 +28,11 @@ export default function Landing() {
           <div className="flex  md:flex-row items-center gap-4 mt-10">
             <Cta
               children="Get Started"
-              className="bg-baseColor hover:bg-opacity-90 text-white font-medium text-sm p-6  rounded-xl w-full sm:w-auto  shadow-lg transition-all duration-300"
+              className="bg-baseColor hover:bg-opacity-90 text-white font-medium text-sm p-6  rounded-[72px] w-full sm:w-auto  shadow-lg transition-all duration-300"
             />
             <Cta
               children="Discover More"
-              className="bg-transparent text-baseColor hover:bg-opacity-90 border p-6 border-baseColor font-medium w-full sm:w-auto  rounded-xl  text-base shadow-lg transition-all duration-300"
+              className="bg-transparent text-baseColor hover:bg-opacity-90 border p-6 border-baseColor font-medium w-full sm:w-auto  rounded-[72px]  text-base shadow-lg transition-all duration-300"
             />
           </div>
         </div>
@@ -236,7 +236,7 @@ export function GettingStarted() {
           reviews.
         </p>
         <Cta
-          className="bg-baseColor rounded-2xl text-sm text-white mt-4"
+          className="bg-baseColor rounded-[72px] text-sm text-white mt-4"
           children="Join Now"
         />
       </div>
@@ -320,7 +320,7 @@ export function TrustedContributors() {
         </div>
 
         <div className="mb-8">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-6 px-8 text-sm rounded-full ">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-6 px-8 text-sm rounded-[72px] ">
             Join Now
           </Button>
         </div>

@@ -6,15 +6,20 @@ import {
   ClipboardList,
   ShieldCheck,
   GraduationCap,
-  Bookmark,
-  FileText,
   BookOpen,
-  LifeBuoy,
-  Menu,
-  X,
+  BarChart2,
+  Tags,
+  Star,
+  SaveAll,
+  FileStack,
+  Award,
+  ShieldAlert,
+  Settings2,
+  HelpCircle,
+  UserCircle,
   VerifiedIcon,
   ShieldClose,
-  ChartBarDecreasing,
+  ChartBarDecreasing
 } from "lucide-react";
 import { Icon } from "../constant/icons";
 export const pageTitles = {
@@ -53,33 +58,37 @@ export const categoryData = [
 ];
 export const sidebarNavItems = [
   { icon: Home, label: "Home", href: "/dashboard" },
-  { icon: Bookmark, label: "Saved Review", href: "/dashboard/saved-review" },
-  { icon: FileText, label: "My Reviews", href: "/dashboard/my-reviews" },
-  { icon: Trophy, label: "LeadersBoard", href: "/dashboard/leadersboard" },
+  { icon: SaveAll, label: "Saved Review", href: "/dashboard/saved-review" },
+  { icon: FileStack, label: "My Reviews", href: "/dashboard/my-reviews" },
+  { icon: Award, label: "LeadersBoard", href: "/dashboard/leadersboard" },
   {
     icon: ClipboardList,
     label: "Review Management",
     href: "/dashboard/management",
   },
-  { icon: ShieldCheck, label: "Trust & Safety Hub", href: "/dashboard/safety" },
+  { icon: ShieldAlert, label: "Trust & Safety Hub", href: "/dashboard/safety" },
   {
     icon: GraduationCap,
     label: "Educational Shortcuts",
     href: "/dashboard/education",
   },
-  { icon: Settings, label: "Settings", href: "/dashboard/settings" },
-  {
-    icon: User,
-    label: "Profile",
-    href: "/dashboard/settings/dashboard/profile",
-  },
+  { icon: BarChart2, label: "Charts", href: "/dashboard/charts" },
+  { icon: Tags, label: "Category", href: "/dashboard/category" },
+  { icon: Settings2, label: "Settings", href: "/dashboard/settings" },
   {
     icon: BookOpen,
     label: "Guidelines",
     href: "/dashboard/settings/dashboard/guidelines",
   },
-  { icon: LifeBuoy, label: "Support", href: "/dashboard/settings/support" },
+  { icon: HelpCircle, label: "Support", href: "/dashboard/settings/support" },
+  {
+    icon: UserCircle,
+    label: "Profile",
+    href: "/dashboard/settings/dashboard/profile",
+  },
 ];
+
+
 
 export const HomeIcons = [
   { url: "/", logo: Icon.home, label: "Home" },
