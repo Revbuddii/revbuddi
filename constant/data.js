@@ -32,9 +32,9 @@ export const pageTitles = {
   "/dashboard/safety": "Trust & Safety Hub",
   "/dashboard/education": "Educational Shortcuts",
   "/dashboard/settings": "Settings",
-  "/dashboard/settings/dashboard/profile": "Profile",
-  "/dashboard/settings/dashboard/guidelines": "Guidelines",
-  "/dashboard/settings/support": "Support",
+  "/dashboard/profile": "Profile",
+  "/dashboard//guidelines": "Guidelines",
+  "/dashboard/settings": "Support",
 };
 export const categoryData = [
   {
@@ -78,13 +78,13 @@ export const sidebarNavItems = [
   {
     icon: BookOpen,
     label: "Guidelines",
-    href: "/dashboard/settings/dashboard/guidelines",
+    href: "/dashboard/guidelines",
   },
-  { icon: HelpCircle, label: "Support", href: "/dashboard/settings/support" },
+  { icon: HelpCircle, label: "Support", href: "/dashboard/support" },
   {
     icon: UserCircle,
     label: "Profile",
-    href: "/dashboard/settings/dashboard/profile",
+    href: "/dashboard/profile",
   },
 ];
 

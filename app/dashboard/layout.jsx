@@ -8,7 +8,7 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
-import { pageTitles, sidebarNavItems, HomeIcons } from "../../constant/data";
+import { pageTitles, sidebarNavItems } from "../../constant/data";
 import { Icon } from "../../constant/icons";
 import DashBoardHeader from "./Header";
 
@@ -184,43 +184,14 @@ export default function AdminDashboard({ children }) {
             overscrollBehavior: 'contain' 
           }}
         >
-          <div className="mb-2">
+          {/* <div className="mb-2">
             <h1 className="text-3xl text-black font-semibold">
               {currentPageTitle}
             </h1>
-          </div>
+          </div> */}
           {children}
         </main>
 
-        {/* {isMobile && (
-          <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-lg z-20">
-            <div className="flex justify-around items-center h-16">
-              {HomeIcons.map((item) => {
-                const isActive = pathname === item.url;
-                return (
-                  <Link
-                    href={item.url}
-                    key={item.label}
-                    className={`flex flex-col items-center justify-center w-1/5 h-full ${
-                      isActive ? "text-baseColor" : "text-gray-500"
-                    }`}
-                  >
-                    <div className="w-6 h-6 mb-1">
-                      <Image
-                        src={item.logo}
-                        alt={item.label}
-                        width={24}
-                        height={24}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="text-xs">{item.label}</span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        )} */}
       </div>
     </div>
   );
