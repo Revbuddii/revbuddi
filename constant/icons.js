@@ -18,11 +18,13 @@ import commentWidget from "../assets/icons/comment-widget.svg";
 import ratingWidget from "../assets/icons/rating-widget.svg";
 import colorWidget from "../assets/icons/color-widget.svg";
 import neon from "../assets/icons/neon.svg";
+import tesla from "../assets/icons/tesla.png";
 
 export const Icon = {
   andriod,
   delivery,
   woman,
+  tesla,
   andriodNew,
   category,
   chart,

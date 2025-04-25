@@ -13,7 +13,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-const ReviewCard = ({ review }) => {
+export const ReviewCard = ({ review }) => {
   return (
     <Card className="shadow-sm ">
       <CardHeader className="space-y-0 pb-4">
